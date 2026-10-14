@@ -21,11 +21,6 @@ def training():
     learning_rate = 0.001
     m = len(tab_km)
     j = 0
-    print("Nombre de données :", len(tab_km))
-    print("Premier kilométrage :", tab_km[0])
-    print("Premier prix :", tab_prices[0])
-    print("Prix minimum :", min(tab_prices))
-    print("Prix maximum :", max(tab_prices))
     while j < 100000:
         sum_error0 = 0
         sum_error1 = 0
@@ -38,11 +33,10 @@ def training():
         tmp1 = learning_rate * 1/m * sum_error1
         theta0 -= tmp0
         theta1 -= tmp1
-        if j % 5 == 0:
-            print(j, theta0, theta1)
+        # if j % 5 == 0:
+        #     print(j, theta0, theta1)
         j +=1
-    print("j - > ", j)
-    print("resultat a la fin de la boucle - > ",theta0)
+    print("theta0 - > ",theta0)
     print("theta1 - >",theta1)
     return theta0,theta1,max_km
 
